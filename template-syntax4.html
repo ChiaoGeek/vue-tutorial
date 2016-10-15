@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <title>vue test</title>
+ <script type="text/javascript" src="lib/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <span>{{ message | firstFilter }}</span>
+  </div>
+</body>
+<script type="text/javascript">
+  var app = new Vue({
+    el: "#app",
+    data: {
+      message: 2
+    },
+    filters: {
+      firstFilter: function (value) {
+        value = value + 100;
+        return value;
+      }
+    }
+  });
+</script>
+</html>
+<!--
+  {{ message | filterA('arg1', arg2) }}
+  arg1 is the second argument.
+  arg2 is the third argument
+-->

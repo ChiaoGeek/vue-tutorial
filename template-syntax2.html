@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <title>vue test</title>
+ <script type="text/javascript" src="lib/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <span v-html="rawHtml"></span>
+  </div>
+</body>
+<script type="text/javascript">
+  var app = new Vue({
+    el: "#app",
+    data: {
+      rawHtml: 'Hello<font color="red">test</font> Vue<b>eee</b>!'
+    }
+  });
+</script>
+</html>
+<!--
+  inerpolation using v-once
+  The data can not be updated
+ -->
