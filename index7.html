@@ -9,11 +9,12 @@
   <div id="app">
     <ol>
       <todo-item v-for="todo in todos" v-bind:todo="todo"></todo-item>
-      
+
     </ol>
   </div>
 </body>
 <script type="text/javascript">
+  // todo-item is name of the component
   Vue.component('todo-item', {
   // The todo-item component now accepts a
   // "prop", which is like a custom attribute.
@@ -35,3 +36,9 @@
 
 </script>
 </html>
+<!--
+  The component system is another important concept in Vue.
+  A component is essentially a Vue instance.
+  Registering a component in Vue is straightfoward.
+  We can pass the todo into each repeated component using v-bind
+ -->
