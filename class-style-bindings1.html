@@ -7,25 +7,24 @@
 </head>
 <body>
   <div id="app">
-    <span>{{ message | firstFilter }}</span>
+    <span class="static" v-bind:class="{ li: ifli, ahref: ifahref }"></span>
+    <span class="static2" v-bind:class="classObj"></span>
   </div>
 </body>
 <script type="text/javascript">
   var app = new Vue({
-    el: "#app",
+    el: '#app',
     data: {
-      message: 2
-    },
-    filters: {
-      firstFilter: function (value) {
-        value = value + 100;
-        return value;
+      ifli: true,
+      ifahref: false,
+      classObj: {
+        classOne: true,
+        classTwo: false
       }
     }
   });
 </script>
 </html>
 <!--
-  note:
-    computed properties are cached based on its dependencies.
+  Binding HTML classes
 -->

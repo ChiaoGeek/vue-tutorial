@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <title>vue test</title>
+ <script type="text/javascript" src="lib/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <my-example ></my-example>
+  </div>
+</body>
+<script type="text/javascript">
+  Vue.component('my-example', {
+    template: '<span>{{ message }}</span>',
+    data: {
+      message: 'hello'
+    }
+
+  });
+  var app = new Vue({
+    el: '#app',
+
+
+  });
+</script>
+</html>
+<!--
+  It will generate errors.
+  Because data has to be function in the component instances.
+
+-->
