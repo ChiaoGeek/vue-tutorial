@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <title>vue test</title>
+ <script type="text/javascript" src="lib/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p>
+      {{ counter }}
+    </p>
+    <my-example v-on:increasement="increase"></my-example>
+    <my-example v-on:increasement="increase"></my-example>
+    <my-example v-on:increasement="increase"></my-example>
+    <my-example v-on:increasement="increase"></my-example>
+    <my-example v-on:increasement="increase"></my-example>
+  </div>
+</body>
+<script type="text/javascript">
+  Vue.component('my-example', {
+    template: '<button v-on:click="increasement">{{ counter }}</button>',
+    data: function(){
+      return {counter: 0};
+    },
+    methods: {
+      increasement: function() {
+        this.counter += 1;
+        this.$emit('increasement');
+      }
+    }
+  });
+
+  var app = new Vue({
+    el: '#app',
+    data: {
+      counter: 0
+    },
+    methods: {
+      increase: function(){
+        this.counter += 1;
+      }
+    }
+  });
+</script>
+</html>
+<!--
+  It will generate errors.
+  Because data has to be function in the component instances.
+
+-->
